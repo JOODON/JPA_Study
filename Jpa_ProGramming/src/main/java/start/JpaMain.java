@@ -44,11 +44,10 @@ public class JpaMain {
         System.out.println(" findMember "+ findMember.getUserName() + " ,age = " + findMember.getAge());
 
         List<Member> memberList = em.createQuery("select  m from Member m ",Member.class).getResultList();
-        //[전체 찾기 부분]
+
         System.out.println("memberSize" + memberList.size());
 
         em.remove(member);
-        //[삭제 부분]
     }
 
 }

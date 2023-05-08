@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js" integrity="sha256-a2yjHM4jnF9f54xUQakjZGaqYs/V1CYvWpoqZzC2/Bw=" crossorigin="anonymous"></script>
+    <style>
+        ul img{
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+        <img src="img/coffee-gray.jpg" id="mainImg">
+    <ul>
+        <img src="img/coffee-gray.jpg" class="img">
+        <img src="img/coffee-blue.jpg" class="img">
+        <img src="img/coffee-pink.jpg" class="img">
+    </ul>
+    <script>
+        let img = $(".img");
+        let mainImg = $("#mainImg");
+
+        $(function (){
+            img.on("click",function (obj){
+               let src =  obj.target.src;
+               mainImg.attr("src",src);
+            });
+        })
+    </script>
+</body>
+</html>

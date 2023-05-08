@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js" integrity="sha256-a2yjHM4jnF9f54xUQakjZGaqYs/V1CYvWpoqZzC2/Bw=" crossorigin="anonymous"></script>
+  <style>
+    img,div{
+      text-align: center;
+      font-size: 20px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div>
+    <button id="prev-btn">이전</button>
+    <button id="next-btn">다음</button>
+  </div>
+  <div>
+    <img src="img/pic_1.jpg" id="mainImg">
+  </div>
+  <script>
+
+    let mainImg = $("#mainImg");
+    let prev = $("#prev-btn");
+    let next = $("#next-btn");
+    let imgNum = 1;
+
+    function showImage() {
+        let src = `img/pic_${imgNum}.jpg`;
+        mainImg.attr("src", src);
+    }
+
+    prev.on("click", function() {
+      if (imgNum === 1)
+          imgNum = 8;
+      imgNum--;
+      showImage();
+    });
+
+    next.on("click", function() {
+      if (imgNum === 8)
+          imgNum = 1;
+      imgNum++;
+      showImage();
+    });
+
+  </script>
+</body>
+</html>

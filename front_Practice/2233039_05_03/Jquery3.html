@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js" integrity="sha256-a2yjHM4jnF9f54xUQakjZGaqYs/V1CYvWpoqZzC2/Bw=" crossorigin="anonymous"></script>
+  <style>
+    button{
+      width: 400px;
+      height: 70px;
+      font-size: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="btnBox">
+    <button class="btn">Google</button>
+
+    <button class="btn">FaceBook</button>
+
+    <button class="btn">Instagram</button>
+
+    <button class="btn">twitter</button>
+  </div>
+
+  <script>
+    let btn = $(".btn");
+    btn.css({
+      "color":"green",
+      "background":"yellow"
+    });
+
+    $(function(){
+      btn.on("click",function (){
+        $(this).prevUntil().css({
+          "color":"green",
+          "background":"yellow"
+        });
+        $(this).nextUntil().css({
+            "color":"green",
+            "background":"yellow"
+        });
+        $(this).css({
+          "color":"white",
+          "background":"black"
+        });
+      }
+      )
+    });
+  </script>
+</body>
+</html>
